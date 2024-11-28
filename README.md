@@ -1,6 +1,6 @@
 # SRETraining
 These are the SRE training Materials  and projects
-################Project 1: springboot-microservice-logging#####################################
+Project 1: springboot-microservice-logging
 This Java Project is to expose business metrics
 Access Prometheus at /actuator/prometheus. Validate:
 ---http://localhost:8881/actuator/prometheus
