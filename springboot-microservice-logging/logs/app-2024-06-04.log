@@ -1,0 +1,16 @@
+2024-06-04 21:13:04 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting the Logging Demo Application
+2024-06-04 21:13:04 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting SpringbootMicroserviceApplication using Java 17 with PID 11436 (C:\jee-2024-03\projects\springboot-microservice\target\classes started by suman in C:\jee-2024-03\projects\springboot-microservice)
+2024-06-04 21:13:04 [main] INFO  c.l.s.SpringbootMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 21:13:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8881 (http)
+2024-06-04 21:13:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+2024-06-04 21:13:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-04 21:13:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-04 21:13:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-04 21:13:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1475 ms
+2024-06-04 21:13:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-06-04 21:13:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+2024-06-04 21:13:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8881 (http) with context path '/'
+2024-06-04 21:13:07 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Started SpringbootMicroserviceApplication in 2.782 seconds (process running for 3.315)
+2024-06-04 21:13:50 [http-nio-8881-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-04 21:13:50 [http-nio-8881-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-04 21:13:50 [http-nio-8881-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms

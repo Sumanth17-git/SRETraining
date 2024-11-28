@@ -1,0 +1,142 @@
+2024-06-05 11:36:48 [http-nio-8881-exec-5] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x070x120x010x000x070x0e0x030x03H0xb1R ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:262)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-06-05 11:36:48 [http-nio-8881-exec-4] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x070x120x010x000x070x0e0x030x030x110x810xd70xfe0xbbw0x030x8fc0xe20x090xf70x110xb9R0x1a0x040x970x020xbd0x0b0xb6,tJ0xf60xe90xbb0x0b0xc20x860x9e ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:262)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-06-05 11:36:48 [http-nio-8881-exec-6] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xd20x010x000x060xce0x030x0370xd40xf1u^0xc20x110xc60x850xef->K0xbef2%0x88j0xd1*p4,0xe80xd90x040x0da0xa64+ ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:262)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-06-05 11:38:49 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting the Logging Demo Application
+2024-06-05 11:38:50 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting SpringbootMicroserviceApplication using Java 17 with PID 2488 (C:\jee-2024-03\projects\springboot-microservice\target\classes started by suman in C:\jee-2024-03\projects\springboot-microservice)
+2024-06-05 11:38:50 [main] INFO  c.l.s.SpringbootMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 11:38:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8881 (http)
+2024-06-05 11:38:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:38:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 11:38:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-05 11:38:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 11:38:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1363 ms
+2024-06-05 11:38:52 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-06-05 11:38:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:38:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8881 (http) with context path '/'
+2024-06-05 11:38:52 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Started SpringbootMicroserviceApplication in 2.504 seconds (process running for 3.078)
+2024-06-05 11:38:59 [http-nio-8881-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 11:38:59 [http-nio-8881-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 11:38:59 [http-nio-8881-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 11:38:59 [http-nio-8881-exec-1] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:04 [http-nio-8881-exec-2] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:05 [http-nio-8881-exec-3] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:05 [http-nio-8881-exec-4] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:06 [http-nio-8881-exec-5] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:06 [http-nio-8881-exec-6] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:06 [http-nio-8881-exec-7] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:39:06 [http-nio-8881-exec-8] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Doe","email":"john.doe@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:20 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting the Logging Demo Application
+2024-06-05 11:41:20 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting SpringbootMicroserviceApplication using Java 17 with PID 16884 (C:\jee-2024-03\projects\springboot-microservice\target\classes started by suman in C:\jee-2024-03\projects\springboot-microservice)
+2024-06-05 11:41:20 [main] INFO  c.l.s.SpringbootMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 11:41:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8881 (http)
+2024-06-05 11:41:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:41:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 11:41:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-05 11:41:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 11:41:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 875 ms
+2024-06-05 11:41:21 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-06-05 11:41:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:41:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8881 (http) with context path '/'
+2024-06-05 11:41:21 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Started SpringbootMicroserviceApplication in 1.694 seconds (process running for 2.285)
+2024-06-05 11:41:22 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 11:41:22 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 11:41:22 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 11:41:26 [http-nio-8881-exec-1] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Alex Jones","email":"chris.garcia@demo.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:27 [http-nio-8881-exec-2] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Chris Johnson","email":"jane.johnson@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:28 [http-nio-8881-exec-3] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Pat Johnson","email":"jane.garcia@demo.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:28 [http-nio-8881-exec-4] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Alex Miller","email":"pat.miller@mail.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:28 [http-nio-8881-exec-6] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Taylor Brown","email":"pat.davis@demo.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:28 [http-nio-8881-exec-5] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Taylor Miller","email":"john.brown@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:29 [http-nio-8881-exec-7] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jordan Smith","email":"alex.miller@demo.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:29 [http-nio-8881-exec-9] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Williams","email":"jane.jones@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:29 [http-nio-8881-exec-8] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jordan Jones","email":"taylor.brown@test.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:29 [http-nio-8881-exec-10] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Pat Jones","email":"jane.smith@demo.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:29 [http-nio-8881-exec-1] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jordan Brown","email":"casey.johnson@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:30 [http-nio-8881-exec-2] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Taylor Jones","email":"chris.johnson@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:30 [http-nio-8881-exec-3] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Taylor Garcia","email":"pat.smith@demo.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:30 [http-nio-8881-exec-4] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jane Davis","email":"john.williams@test.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:30 [http-nio-8881-exec-6] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Pat Smith","email":"john.johnson@mail.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:30 [http-nio-8881-exec-5] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Casey Johnson","email":"taylor.miller@mail.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:30 [http-nio-8881-exec-7] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Alex Jones","email":"alex.johnson@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:31 [http-nio-8881-exec-9] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Chris Williams","email":"pat.jones@mail.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:31 [http-nio-8881-exec-8] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"John Davis","email":"john.johnson@mail.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:31 [http-nio-8881-exec-10] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jane Garcia","email":"jane.johnson@mail.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:41:31 [http-nio-8881-exec-1] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Casey Davis","email":"john.garcia@example.com"},"message":"Hello, World!","status":"success"}
+2024-06-05 11:51:51 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-06-05 11:51:51 [RMI TCP Connection(15)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:52:01 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting the Logging Demo Application
+2024-06-05 11:52:01 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting SpringbootMicroserviceApplication using Java 17 with PID 20452 (C:\jee-2024-03\projects\springboot-microservice\target\classes started by suman in C:\jee-2024-03\projects\springboot-microservice)
+2024-06-05 11:52:01 [main] INFO  c.l.s.SpringbootMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 11:52:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8881 (http)
+2024-06-05 11:52:02 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:52:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 11:52:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-05 11:52:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 11:52:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 991 ms
+2024-06-05 11:52:03 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-06-05 11:52:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:52:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8881 (http) with context path '/'
+2024-06-05 11:52:03 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Started SpringbootMicroserviceApplication in 1.852 seconds (process running for 2.438)
+2024-06-05 11:52:03 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 11:52:03 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 11:52:03 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-06-05 11:52:11 [http-nio-8881-exec-1] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jane Miller","email":"alex.davis@example.com"},"message":"Hello, World!","status":"success","products":[{"price":3751.6716577201446,"name":"Tablet","description":"Best seller","id":675,"availability":true},{"price":1037.8773661312791,"name":"Camera","description":"User friendly","id":141,"availability":true},{"price":1792.7545183140269,"name":"Tablet","description":"User friendly","id":334,"availability":true},{"price":4980.624495437089,"name":"Tablet","description":"User friendly","id":329,"availability":false},{"price":3968.398648984826,"name":"Smartphone","description":"User friendly","id":676,"availability":false}]}
+2024-06-05 11:52:32 [http-nio-8881-exec-4] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jane Jones","email":"jordan.johnson@test.com"},"message":"Hello, World!","status":"success","products":[{"price":924.9670598958215,"name":"Laptop","description":"User friendly","id":204,"availability":true},{"price":4519.6906998204595,"name":"Smartphone","description":"Top quality","id":529,"availability":false},{"price":3072.6362738323933,"name":"Laptop","description":"Latest model","id":985,"availability":false},{"price":1789.3030478724888,"name":"Smartphone","description":"High performance","id":100,"availability":true},{"price":3381.9534321967108,"name":"Tablet","description":"User friendly","id":475,"availability":false}]}
+2024-06-05 11:52:44 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-06-05 11:52:44 [RMI TCP Connection(6)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:54:12 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting the Logging Demo Application
+2024-06-05 11:54:12 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Starting SpringbootMicroserviceApplication using Java 17 with PID 13016 (C:\jee-2024-03\projects\springboot-microservice-logging\target\classes started by suman in C:\jee-2024-03\projects\springboot-microservice-logging)
+2024-06-05 11:54:12 [main] INFO  c.l.s.SpringbootMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 11:54:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8881 (http)
+2024-06-05 11:54:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:54:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 11:54:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-05 11:54:13 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 11:54:13 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 888 ms
+2024-06-05 11:54:13 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-06-05 11:54:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+2024-06-05 11:54:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8881 (http) with context path '/'
+2024-06-05 11:54:13 [main] INFO  c.l.s.SpringbootMicroserviceApplication - Started SpringbootMicroserviceApplication in 1.779 seconds (process running for 2.402)
+2024-06-05 11:54:14 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 11:54:14 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 11:54:14 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 11:54:17 [http-nio-8881-exec-1] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Alex Williams","email":"taylor.smith@example.com"},"message":"Hello, World!","status":"success","products":[{"price":4460.176242857315,"name":"Camera","description":"Top quality","id":787,"availability":true},{"price":1238.4424960546435,"name":"Smartwatch","description":"Best seller","id":221,"availability":false},{"price":1338.6768053793166,"name":"Camera","description":"Best seller","id":917,"availability":false},{"price":1300.1606905207855,"name":"Camera","description":"User friendly","id":300,"availability":false},{"price":4150.413232807085,"name":"Smartphone","description":"High performance","id":973,"availability":false}]}
+2024-06-05 11:54:26 [http-nio-8881-exec-4] INFO  c.l.s.JsonResponseController - JSON Response: {"data":{"address":"123 Main St, Anytown, USA","name":"Jordan Brown","email":"chris.miller@test.com"},"message":"Hello, World!","status":"success","products":[{"price":3769.1109186269464,"name":"Smartphone","description":"Best seller","id":382,"availability":false},{"price":2075.9042301387076,"name":"Tablet","description":"Affordable price","id":757,"availability":true},{"price":285.24951536556114,"name":"Smartwatch","description":"User friendly","id":744,"availability":true},{"price":820.9545184051685,"name":"Tablet","description":"Latest model","id":267,"availability":true},{"price":4997.881518665485,"name":"Headphones","description":"Top quality","id":126,"availability":true}]}
+2024-06-05 11:54:38 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-06-05 11:54:38 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8881"]
