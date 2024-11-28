@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-app
+  labels:
+    app: springboot-app
+spec:
+  replicas: 2  # Updated replicas
+  selector:
+    matchLabels:
+      app: springboot-app
+  template:
+    metadata:
+      labels:
+        app: springboot-app
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8881"  # Updated port
+        prometheus.io/path: "/actuator/prometheus"
+    spec:
+      containers:
+        - name: springboot-app
+          image: sumanth17121988/springbootmetric:1
+          ports:
+            - containerPort: 8881  # Updated port
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "250m"
+              memory: "128Mi"
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8881  # Updated port
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8881  # Updated port
+            initialDelaySeconds: 5
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-app-service
+spec:
+  selector:
+    app: springboot-app
+  ports:
+    - protocol: TCP
+      port: 8881  # Updated port
+      targetPort: 8881  # Updated port
+  type: LoadBalancer  # Updated to LoadBalancer
