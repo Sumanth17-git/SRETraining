@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: springboot-app
-          image: <your-docker-image>:latest
+          image: sumanth17121988/springbootmetric:1
           ports:
             - containerPort: 8881  # Updated port
           resources:
