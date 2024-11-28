@@ -1,8 +1,6 @@
 # Create a new namespace named 'monitoring' for kube-prometheus-stack installation
-kubectl create namespace monitoring
-
-# Get Helm Repository Info
    ```bash
+kubectl create namespace monitoring
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 
