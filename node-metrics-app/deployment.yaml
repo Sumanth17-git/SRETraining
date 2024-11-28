@@ -1,0 +1,65 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-metrics-app
+  labels:
+    app: node-metrics-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-metrics-app
+  template:
+    metadata:
+      labels:
+        app: node-metrics-app
+    spec:
+      containers:
+      - name: node-metrics-app
+        image: sumanth17121988/node-metrics-app:1
+        ports:
+        - name: metrics-port      # Named port as string
+          containerPort: 9991
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: 9991
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: 9991
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-metrics-app
+  labels:
+    prometheus: monitored  # Label to match in ServiceMonitor
+spec:
+  selector:
+    app: node-metrics-app
+  ports:
+    - name: metrics-port    # Match the named port here
+      protocol: TCP
+      port: 9991              # External port for the load balancer
+      targetPort: 9991       # Port in the container
+  type: LoadBalancer
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: node-metrics-app-monitor
+  labels:
+    release: prom-stack  # Label must match the Prometheus release name
+spec:
+  selector:
+    matchLabels:
+      prometheus: monitored  # Matches the label on the Service
+  namespaceSelector:
+    matchNames:
+      - default  # Update to the correct namespace if needed
+  endpoints:
+    - port: metrics-port         # Use the named port as a string here
+      path: /metrics             # Path to scrape metrics
+      interval: 30s

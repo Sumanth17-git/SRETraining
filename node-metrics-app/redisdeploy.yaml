@@ -1,0 +1,65 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        # Redis container
+        - name: redis
+          image: redis:latest
+          ports:
+            - containerPort: 6379
+        # Redis Exporter sidecar container
+        - name: redis-exporter
+          image: oliver006/redis_exporter:latest
+          ports:
+            - containerPort: 9121
+          env:
+            - name: REDIS_ADDR
+              value: "redis://localhost:6379"  # Connects to Redis on localhost within the Pod
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  labels:
+    prometheus: monitored  # Label to match in ServiceMonitor
+spec:
+  selector:
+    app: redis
+  ports:
+    - name: metrics-port       # Named port to match ServiceMonitor configuration
+      protocol: TCP
+      port: 9121               # External port for the Redis Exporter
+      targetPort: 9121         # Port in the container
+  type: LoadBalancer
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: redis-metrics-monitor
+  labels:
+    release: prom-stack  # Label must match the Prometheus release name
+spec:
+  selector:
+    matchLabels:
+      prometheus: monitored  # Matches the label on the Redis Service
+  namespaceSelector:
+    matchNames:
+      - default  # Update to the correct namespace if Redis is in a different namespace
+  endpoints:
+    - port: metrics-port         # Use the named port as a string here
+      path: /metrics             # Path to scrape metrics from Redis Exporter
+      interval: 30s

@@ -1,0 +1,19 @@
+# Prometheus service configuration
+prometheus:
+  service:
+    type: LoadBalancer
+  prometheusSpec:
+    additionalScrapeConfigs:
+      - job_name: 'node-metrics-app'    # A unique name for this scrape job
+        static_configs:
+          - targets: ['node-metrics-app.default.svc.cluster.local:9991']  # Use the service FQDN and port
+        scrape_interval: 30s             # Frequency at which Prometheus scrapes this endpoint
+        metrics_path: /metrics           # The endpoint path where metrics are exposed
+        scheme: http                     # Protocol for accessing metrics
+
+
+# Grafana service configuration
+grafana:
+  service:
+    type: LoadBalancer
+

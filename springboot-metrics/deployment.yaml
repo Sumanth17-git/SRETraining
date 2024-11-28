@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-metrics
+  labels:
+    app: springboot-metrics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-metrics
+  template:
+    metadata:
+      labels:
+        app: springboot-metrics
+    spec:
+      containers:
+      - name: springboot-metrics
+        image: sumanth17121988/springboot-metrics:latest
+        ports:
+        - name: metrics-port      # Named port as string
+          containerPort: 9999
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 9999
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 9999
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-metrics
+  labels:
+    prometheus: monitored # Label to match in ServiceMonitor
+spec:
+  selector:
+    app: springboot-metrics
+  ports:
+    - name: metrics-port    # Match the named port here
+      protocol: TCP
+      port: 9999              # External port for the load balancer
+      targetPort: 9999      # Port in the container
+  type: LoadBalancer
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: springboot-metrics-monitor
+  labels:
+    release: prom-stack  # Label must match the Prometheus release name
+spec:
+  selector:
+    matchLabels:
+      prometheus: monitored # Matches the label on the Service
+  namespaceSelector:
+    matchNames:
+      - default  # Update to the correct namespace if needed
+  endpoints:
+    - port: metrics-port           # Use the named port as a string here
+      path: /actuator/prometheus    # Path to scrape metrics
+      interval: 30s
