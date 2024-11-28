@@ -1,5 +1,6 @@
-# Create a new namespace named 'monitoring' for kube-prometheus-stack installation
+# Setup Prometheus, Grafana Stack using Helm Chart
    ```bash
+Create a new namespace named 'monitoring' for kube-prometheus-stack installation
 kubectl create namespace monitoring
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
