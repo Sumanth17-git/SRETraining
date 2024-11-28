@@ -2,8 +2,10 @@
 ## Project Spring Boot Microservice Logging
 
 This Java Project is designed to expose business metrics and good amount of logs
-Step1: Build the Maven project
+- Step1: Build the Maven project
 `mvn clean install`
+- Step 2: Build Docker image or use existing one
+  `docker build -t sumanth17121988/springbootmetrics:2`
 
 
 To test this API  : http://localhost:8881/api/json 
