@@ -6,8 +6,11 @@ This Java Project is designed to expose business metrics and good amount of logs
 `mvn clean install`
 - Step 2: Build Docker image or use existing one
   `docker build -t sumanth17121988/springbootmetrics:2`
-
-
+- Step 3: Run it in Kubernetes
+  `kubectl apply -f deployment.yml`
+  `kubectl get pods`
+  `kubectl get svc`
+  
 To test this API  : http://localhost:8881/api/json 
 
 ### Access Prometheus
