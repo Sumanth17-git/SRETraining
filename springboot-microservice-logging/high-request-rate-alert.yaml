@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: high-request-rate-alert
+  namespace: monitoring
+  labels:
+    release: prom-stack  # Match the Helm release name
+spec:
+  groups:
+    - name: springboot-app-alerts
+      rules:
+        - alert: HighRequestRate
+          expr: rate(api_json_requests_count_total[1m]) > 1
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High Request Rate Detected"
+            description: "The rate of requests per second has exceeded 1 for the past minute. Current value: {{ $value }}"
