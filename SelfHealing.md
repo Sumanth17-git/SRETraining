@@ -26,7 +26,6 @@ This guide demonstrates how to implement self-healing in Kubernetes using **KEDA
    sum(rate(container_cpu_usage_seconds_total[1m])) by (pod)
 
 ### 2. Configure Keda
-   ```bash
    kubectl apply -f keda-scaledobject.yaml
 
 
