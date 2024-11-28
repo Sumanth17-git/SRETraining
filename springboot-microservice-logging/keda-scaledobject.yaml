@@ -1,0 +1,19 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: springboot-app-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: springboot-app
+  pollingInterval: 30  # Poll metrics every 30 seconds
+  cooldownPeriod: 300  # Wait 5 minutes before scaling down
+  minReplicaCount: 2   # Minimum number of replicas
+  maxReplicaCount: 10  # Maximum number of replicas
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: http://prom-stack-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
+        metricName: high_request_rate
+        threshold: '5'
+        query: sum(rate(api_json_requests_count_total[1m]))
