@@ -1,5 +1,5 @@
 # Self-Healing with KEDA for High CPU Usage
-'''bash
+```bash
 Scenario:
 Monitor high CPU usage using Prometheus metrics.
 Use KEDA's Prometheus scaler to trigger scaling actions.
