@@ -7,14 +7,13 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo update
 
 # Install Helm Chart setting "grafana.adminPassword=?"
-   ```bash
+
 helm upgrade --install prom-stack prometheus-community/kube-prometheus-stack --namespace monitoring --set grafana.adminPassword="admin_123*"
 After installing kube-prometheus-stack Helm chart, we can use the 
 kubectl get all -n monitoring
 kubectl --namespace monitoring get pods -l "release=prom-stack"
 
 # Remove the helm charts
-   ```bash
 helm uninstall kube-prometheus-stack --namespace monitoring
 helm repo list
 helm repo remove prometheus-community
