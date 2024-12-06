@@ -1,12 +1,15 @@
-Heap Dump Processing Automation
+# Heap Dump Processing Automation
+
 This repository automates the process of generating, analyzing, and managing Java heap dumps using Eclipse MAT (Memory Analyzer Tool). The automation script identifies heap dumps, analyzes them, and organizes the reports.
 
-Setup and Workflow
-1. Generate Heap Dump in Your Application
-Run your Java application with the following options to enable automatic heap dump generation on OutOfMemoryError:
-java -Xmx256m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/dhrangdhariaritesh/heapdump/dumps -jar buggyApp.jar PROBLEM_OOM
+## Setup and Workflow
 
-This will generate .hprof files in the specified path (/home/dhrangdhariaritesh/heapdump/dumps) whenever the application runs out of memory.
+### 1. Generate Heap Dump in Your Application
+Run your Java application with the following options to enable automatic heap dump generation on `OutOfMemoryError`:
+
+```bash
+java -Xmx256m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/dhrangdhariaritesh/heapdump/dumps -jar buggyApp.jar PROBLEM_OOM
+## This will generate .hprof files in the specified path (/home/dhrangdhariaritesh/heapdump/dumps) whenever the application runs out of memory.
 
 2. Analyze Heap Dumps
 Extract and Analyze Using ParseHeapDump.sh
