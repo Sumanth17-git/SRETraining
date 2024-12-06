@@ -31,6 +31,6 @@ Ensure Prometheus is installed and accessible. If you’re using the kube-promet
 6. Setup Load test
    ```bash
    sudo apt install wrk -y
-   wrk -t10 -c200 -d30s http://<springboot-app-service-cluster-ip>:8881/json
+   wrk -t10 -c200 -d30s http://<springboot-app-service-cluster-ip>:8881/api/json
    kubectl get pods -w
    kubectl logs -n keda -l app=keda-operator
