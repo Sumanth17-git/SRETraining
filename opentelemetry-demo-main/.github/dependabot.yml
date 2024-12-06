@@ -1,0 +1,19 @@
+# Copyright The OpenTelemetry Authors
+# SPDX-License-Identifier: Apache-2.0
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "infra"
+  - package-ecosystem: "gomod"
+    directories:
+      - "/src/checkoutservice"
+      - "/src/productcatalogservice"
+    groups:
+      go-production-dependencies:
+        dependency-type: "production"
+    schedule:
+      interval: "daily"
