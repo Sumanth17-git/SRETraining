@@ -1,0 +1,20 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: cpu-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: cpu-stress-app
+  pollingInterval: 30  # Check metrics every 30 seconds
+  cooldownPeriod: 300  # Wait 5 minutes before scaling down
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: http://prom-stack-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
+        metricName: cpu_usage_high
+        threshold: "1"  # Threshold for high CPU usage
+        query: |
+          sum(rate(container_cpu_usage_seconds_total[1m])) by (pod)

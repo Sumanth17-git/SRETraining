@@ -1,0 +1,13 @@
+- name: List all pods in default namespace
+  hosts: localhost
+  tasks:
+    - name: Get pod details
+      k8s_info:
+        kubeconfig: /home/ansible/.kube/config
+        kind: Pod
+        namespace: default
+      register: pod_info
+
+    - name: Display pod names
+      debug:
+        msg: "{{ pod_info.resources | map(attribute='metadata.name') | list }}"
