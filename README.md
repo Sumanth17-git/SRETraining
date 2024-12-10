@@ -35,6 +35,7 @@ helm upgrade --install  prom-stack prometheus-community/kube-prometheus-stack \
 kubectl get svc -n monitoring
 kubectl get svc prom-stack-grafana -n monitoring
 kubectl get svc prom-stack-kube-prometheus -n monitoring
+kubectl edit svc prom-stack-kube-prometheus-prometheus -n monitoring
 
 helm rollback prom-stack <previous_revision> -n monitoring
 helm history prom-stack -n monitoring
