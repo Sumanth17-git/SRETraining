@@ -54,6 +54,4 @@ kubectl version --client
 gcloud --version
 gke-gcloud-auth-plugin --version
 apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
-kubectl get namespaces
-gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project focus-ensign-434715-g2
-kubectl get nodes
+
