@@ -1,0 +1,10 @@
+
+
+
+
+
+
+#Ensure Kubernetes is set up and accessible with kubectl.
+#Ansible is installed on your control node, along with the kubernetes.core collection:
+ansible-galaxy collection install kubernetes.core
+pip3 install kubernetes google-auth
