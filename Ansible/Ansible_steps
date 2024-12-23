@@ -65,3 +65,19 @@ apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 gke-gcloud-auth-plugin --version
 
+ansible-galaxy collection install community.kubernetes
+pip3 install kubernetes google-auth
+# Authenticate with gcloud
+gcloud auth login
+#Set up the .kube directory:
+sudo mkdir -p /home/ansible/.kube
+sudo chmod 700 /home/ansible/.kube
+sudo chown ansible:ansible /home/ansible/.kube
+export KUBECONFIG=/home/ansible/.kube/config
+#Connect GKE
+gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project artful-talon-443506-d1
+kubectl get nodes
+
+
+
+
