@@ -1,0 +1,34 @@
+---
+- name: Run Java application
+  hosts: all
+  become: yes
+
+  vars:
+    jar_file_path: "/home/dhrangdhariaritesh/SRETraining/springboot-microservice-logging/target/springboot-microservice-logging.jar"
+
+  tasks:
+    # Install Java if not installed
+    - name: Ensure Java is installed
+      apt:
+        name: default-jre
+        state: present
+        update_cache: yes
+
+    # Run the Java application
+    - name: Run the Java application
+      command: "java -jar {{ jar_file_path }}"
+      args:
+        chdir: "/home/dhrangdhariaritesh/SRETraining/springboot-microservice-logging/target/"
+      async: 3600
+      poll: 0
+      register: java_run
+
+    # Verify that the Java application is running
+    - name: Verify application is running
+      shell: "ps aux | grep -v grep | grep {{ jar_file_path }}"
+      register: verify_java
+      failed_when: verify_java.rc != 0
+
+    - name: Debug application status
+      debug:
+        msg: "Java application is running successfully with process details: {{ verify_java.stdout }}"
