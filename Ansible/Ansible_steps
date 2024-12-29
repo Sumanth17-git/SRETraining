@@ -36,6 +36,8 @@ ssh localhost
 
 ansible localhost -m ping --connection=local
 
+ansible --version
+ps aux | grep ansible
 
 
 
