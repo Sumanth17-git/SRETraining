@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'CONTAINER_NAME', defaultValue: 'nodemetrics', description: 'Name of the Docker container to restart')
+    }
+    stages {
+        stage('Run Ansible Playbook') {
+            steps {
+                script {
+                    // Execute Ansible Playbook
+                    sh """
+                    sudo -u ansible ansible-playbook -i /home/ansible/ansible_scripts/inventory.yml /home/ansible/ansible_scripts/restart_container.yml --extra-vars "container_name=${CONTAINER_NAME}"
+                    """
+                }
+            }
+        }
+    }
+}
