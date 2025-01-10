@@ -1,0 +1,1 @@
+ansible-playbook -i inventory.yml restart_docker_dynamic.yml --extra-vars "container_name=fastapi-observability"

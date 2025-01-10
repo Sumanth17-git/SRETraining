@@ -1,0 +1,41 @@
+---
+- name: Restart Docker container dynamically with detailed validation
+  hosts: vm2
+  become: true  # Escalate privileges to root if necessary
+  vars:
+    container_name: "{{ container_name }}"  # Dynamically passed container name
+  tasks:
+    - name: Restart the Docker container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: started
+        restart: yes
+
+    - name: Check the container status and uptime
+      shell: >
+        docker inspect -f '{{ "{{ .State.Status }}" }} {{ "{{ .State.Running }}" }} {{ "{{ .State.StartedAt }}" }}' {{ container_name }}
+      register: container_status
+      changed_when: false
+
+    - name: Parse container status
+      set_fact:
+        status: "{{ container_status.stdout.split()[0] }}"
+        started_at: "{{ container_status.stdout.split()[2] }}"
+
+    - name: Calculate uptime in seconds
+      shell: >
+        echo $(( $(date +%s) - $(date -d "{{ started_at }}" +%s) ))
+      register: uptime_seconds
+      when: status == "running"
+
+    - name: Validate container restart
+      fail:
+        msg: "Container {{ container_name }} was not restarted successfully. Current status: {{ status }}"
+      when: status != "running"
+
+    - name: Success message with uptime
+      debug:
+        msg: >
+          Container {{ container_name }} was successfully restarted.
+          Current status: {{ status }}.
+          Uptime: {{ uptime_seconds.stdout | default('0') }} seconds.
