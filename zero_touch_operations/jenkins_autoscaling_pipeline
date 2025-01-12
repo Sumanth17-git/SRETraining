@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'WEBHOOK_PAYLOAD', defaultValue: '{"deployment_name": "springboot-app", "replicas": "2"}', description: 'Webhook JSON Payload')
+    }
+
+    stages {
+        stage('Parse Webhook Data') {
+            steps {
+                script {
+                    echo "Raw WEBHOOK_PAYLOAD: ${params.WEBHOOK_PAYLOAD}"
+                    def payload = readJSON text: params.WEBHOOK_PAYLOAD
+                    echo "Received Payload: ${payload}"
+
+                    // Extract deployment name and replicas, use defaults if not provided
+                    env.DEPLOYMENT_NAME = payload.deployment_name ?: 'springboot-app'
+                    env.REPLICAS = payload.replicas ?: '2'
+
+                    echo "DEPLOYMENT_NAME: ${env.DEPLOYMENT_NAME}"
+                    echo "REPLICAS: ${env.REPLICAS}"
+                }
+            }
+        }
+
+        stage('Run Ansible Playbook') {
+            steps {
+                echo "Triggering Ansible for manual autoscaling..."
+                sh """
+                sudo -u ansible ansible-playbook /home/ansible/ansible_scripts/autoscale.yml \
+                    --extra-vars "deployment_name=${env.DEPLOYMENT_NAME} replicas=${env.REPLICAS}"
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Autoscaling completed successfully!'
+        }
+        failure {
+            echo 'Autoscaling failed. Check the logs for details.'
+        }
+    }
+}
