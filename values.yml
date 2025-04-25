@@ -1,0 +1,41 @@
+prometheus:
+  service:
+    type: LoadBalancer
+  prometheusSpec:
+    additionalScrapeConfigs:
+      - job_name: 'redis-exporter'
+        static_configs:
+          - targets:
+              - 'redis-exporter.default.svc.cluster.local:9121'
+        metrics_path: /metrics
+        scheme: http
+        scrape_interval: 30s
+
+      - job_name: 'postgres-exporter'
+        static_configs:
+          - targets:
+              - 'postgres-exporter.default.svc.cluster.local:9187'
+        metrics_path: /metrics
+        scheme: http
+        scrape_interval: 30s
+
+      - job_name: 'mysql-exporter'  # ✅ Newly added job
+        static_configs:
+          - targets:
+              - 'mysql-exporter.default.svc.cluster.local:9104'
+        metrics_path: /metrics
+        scheme: http
+        scrape_interval: 30s
+
+      - job_name: 'node-metrics-app'
+        static_configs:
+          - targets:
+              - 'node-metrics-app.default.svc.cluster.local:9991'
+        metrics_path: /metrics
+        scheme: http
+        scrape_interval: 30s
+
+grafana:
+  service:
+    type: LoadBalancer
+  adminPassword: "admin@123"
