@@ -1,0 +1,29 @@
+server:
+  http_listen_address: 0.0.0.0
+  http_listen_port: 9080
+
+positions:
+  filename: /var/run/promtail/positions.yaml  # Tracks last scraped position for logs
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push  # Replace with your Loki URL
+    tenant_id: ""  # Optional, only if using multi-tenancy in Loki
+
+scrape_configs:
+- job_name: containers
+  docker_sd_configs:
+    - host: unix:///var/run/docker.sock  # Promtail connects to Docker socket
+      refresh_interval: 15s  # Poll the socket every 15 seconds for changes
+
+  pipeline_stages:
+    - docker: {}  # Extract Docker metadata such as container name
+    - static_labels:
+        job: "promtail"  # Add the job label for organization
+
+  relabel_configs:
+    - source_labels: ['__meta_docker_container_name']  # Extract container name from Docker metadata
+      regex: '/(.*)'  # Remove the / prefix from container name
+      target_label: 'container'  # Add the container name as a label
+    - source_labels: ['__meta_docker_container_name']  # Extract container name from Docker metadata
+      regex: '/(.*)'  # Remove the / prefix from container name
+      target_label: 'service_name'  # Add the container name as a label
