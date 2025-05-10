@@ -62,6 +62,7 @@ This demo project is a Spring Boot version of [FastAPI with Observability](https
 
    ```bash
    k6 run --vus 3 --duration 300s k6-script.js
+   docker run -i -v $(pwd):/scripts grafana/k6 run --vus 3 --duration 300s /scripts/load-script.js
    ```
 
    Or send requests from applications' Swagger UI:
